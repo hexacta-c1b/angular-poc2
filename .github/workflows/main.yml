@@ -26,3 +26,4 @@ jobs:
           npm i
           npm run build
           npm run gulp
+          npm run gulp genfile
