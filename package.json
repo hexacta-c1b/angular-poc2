@@ -10,7 +10,8 @@
     "test": "ng test --singleRun",
     "lint": "ng lint --force",
     "e2e": "ng e2e",
-    "gulp": "gulp"
+    "gulp": "gulp",
+	"clean": "rimraf ./dist"
   },
   "pre-commit": [
     "lint"
