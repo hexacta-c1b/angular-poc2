@@ -17,3 +17,7 @@ RUN apk update \
 
 # Angular CLI
 RUN npm install -g @angular/cli@8
+
+FROM nginx
+COPY --from=build-stage /project/dist /usr/share/nginx/html
+EXPOSE 80
