@@ -25,5 +25,6 @@ jobs:
         run: |
           npm i
           npm run build
+          npm run test
           npm run gulp
           npm run gulp genfile
