@@ -24,7 +24,6 @@ jobs:
       - name: npm install and npm run build
         run: |
           npm i
-          npm run build
-          npm run test
+          npm run build:ci
           npm run gulp
           npm run gulp genfile
