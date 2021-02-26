@@ -15,9 +15,16 @@ RUN apk update \
   && npm cache verify \
   && sed -i -e "s/bin\/ash/bin\/sh/" /etc/passwd
 
+RUN mkdir /project
+WORKDIR /project
+COPY package.json .
+RUN npm install
 # Angular CLI
 RUN npm install -g @angular/cli@8
+COPY . .
+
+RUN npm run build
 
 FROM nginx
-COPY --from=build-stage /project/dist /usr/share/nginx/html
+COPY --from=node-angular-cli /project/dist /usr/share/nginx/html
 EXPOSE 80
